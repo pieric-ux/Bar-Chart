@@ -53,12 +53,6 @@
   pointer-events: none;
 }
 
-.overlay {
-  position: absolute;
-  background: #fff;
-  pointer-events: none;
-}
-
 #y-axis path {
   stroke: black;
   stroke-width: 1;
