@@ -90,15 +90,18 @@ d3.json(url)
         
         const content = d3.utcFormat('%Y')(date) + ' Q' + quarter + "<br>$" + d[1] + " Billion";
         
-        const xTooltip = xScale(new Date(d[0])) + padding.left + width / 2;
-        const yTooltip = yScale(d[1]) + padding.top + 250;
+        const xTooltip = xScale(new Date(d[0]));
+        const yTooltip = yScale(d[1]);
+       
+        const containerOffsetLeft = container.node().offsetLeft;
+        const containerOffsetTop = container.node().offsetTop;
 
         tooltip
           .html(content)
           .attr('data-date', d[0])
           .style('opacity', 0.9)
-          .style('left', xTooltip + 'px')
-          .style('top', yTooltip + 'px');
+          .style('left', xTooltip + containerOffsetLeft + 'px')
+          .style('top', yTooltip + containerOffsetTop + 'px');
       })
       .on('mouseout', (event, d) => {
         tooltip
