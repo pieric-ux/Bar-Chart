@@ -68,7 +68,8 @@ d3.json(url)
     .select('body')
     .append('div')
     .attr('class', 'tooltip')
-    .attr('id', 'tooltip');
+    .attr('id', 'tooltip')
+    .style('opacity', 0);
 
     svg
       .append('g')
